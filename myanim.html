@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+  <style>
+  
+  *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  
+    #parent{
+      background-color: black;
+      width: 100%;
+      height: 10vh;
+      position: relative;
+      margin-top: 50px;
+    }
+    
+    #child{
+      background-color: orange;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      width: 100px;
+      height: 10vh;
+      position: relative;
+    }
+    
+    button{
+      margin-top: 10px;
+      padding: 10px;
+      color: blue;
+      font-weight: bold;
+    }
+    
+  </style>
+  
+</head>
+<body>
+  <div id="parent">
+    <p id="child">Child Div</p>
+  </div>
+  <button onclick="moveDiv()">Animate Div</button>
+  
+  <script>
+    function moveDiv(){
+      let demo = document.getElementById("child");
+      let pos = 0;
+      let id = setInterval(myDiv, 5);
+      
+      function myDiv(){
+        if(pos == 350){
+          clearInterval(id);
+        } else{
+          pos++;
+          demo.style.left = pos + "px";
+        }
+      }
+    }
+    
+  </script>
+  
+</body>
+</html>
